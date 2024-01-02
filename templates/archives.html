@@ -9,10 +9,15 @@ Archivados
 {% endblock %}
 
 {% block content %}
-<dl class="row">
-  {% for article in dates %}
-  <dt class="col-sm-4">{{ article.locale_date }}</dt>
-  <dd class="col-sm-8"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+
+
+  {% for year, date_year in dates|groupby( 'date.year' )|sort(reverse=True) %}  
+  <h3>Año {{ year }}</h3>
+  <dl class="row">
+            {% for article in date_year %}
+              <dt class="col-sm-4">{{ article.locale_date }}</dt>
+              <dd class="col-sm-8"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+            {% endfor %}
+  </dl>
   {% endfor %}
-</dl>
 {% endblock %}

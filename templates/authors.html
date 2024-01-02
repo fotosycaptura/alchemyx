@@ -10,6 +10,10 @@ Autores
 
 {% block content %}
 <table class="table table-bordered table-striped table-hover">
+  <thead>
+    <th>Autor(a)</th>
+    <th>Artículos</th>
+  </thead>
   {% for author, articles in authors|sort %}
   <tr>
     <td><a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a></td>

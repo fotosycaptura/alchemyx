@@ -10,6 +10,10 @@ Carpetas
 
 {% block content %}
 <table class="table table-bordered table-striped table-hover">
+  <thead>
+    <th>Carpeta</th>
+    <th>Artículos</th>
+  </thead>
   {% for category, articles in categories|sort %}
   <tr>
     <td><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></td>
