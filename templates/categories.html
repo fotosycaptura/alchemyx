@@ -16,7 +16,7 @@ Carpetas
   </thead>
   {% for category, articles in categories|sort %}
   <tr>
-    <td><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></td>
+    <td><i class="fa fa-folder-o"></i> <a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></td>
     <td>{{ articles|count }}</td>
   </tr>
   {% endfor %}
