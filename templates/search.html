@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+Buscar - {{ SITENAME }}
+{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/search.css">
+<script type="module" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
+{% endblock %}
+{% block content %}
+<section class="search-page">
+    <header class="search-header">
+        <h1>Buscar</h1>
+        <p>
+            Busca artículos por título,
+            contenido, categoría o etiquetas.
+        </p>
+    </header>
+    <div class="search-form">
+        <label for="search-input" class="search-label">
+            Buscar en el sitio
+        </label>
+        <input type="search" id="search-input" class="search-input" placeholder="Ej: Linux, TestDisk, Raspberry Pi..." autocomplete="off" data-search-index="{{ SITEURL }}/search.json">
+    </div>
+    <p id="search-status" class="search-status" aria-live="polite">
+        Escribe al menos 2 caracteres.
+    </p>
+    <div id="search-results" class="search-results">
+    </div>
+</section>
+{% endblock %}
